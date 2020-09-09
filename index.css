@@ -1,7 +1,7 @@
 #table-of-contents{
     background-color: lightblue;
     max-width: 760px;
-    height: 100vh;
+    min-height: 70vh;
     margin: 0 auto;
     padding: 10px;
 }
