@@ -1,56 +1,131 @@
 <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="post1.css">
+</head>
+<body>
 
-<html class="no-js"> 
-    <head>
-        <link rel="stylesheet" href="post1.css">
+    <header> 
+       <h1>  Making a slide show in HTML </h1>
+    </header>
 
-    </head>
-    <body>
-        <header> Post #1 </header>
+    <main> 
 
-        <main> 
-            <h2> Picture Slideshow </h2> 
-            <p> One of my hobbies is photography. I thought it would be cool to find a way to 
-                display multiple pictures in a slideshow fashion. Below is the result. These photos were
-                mostly taken from when I study abroad in Scotland. 
-            </p>
+        <p id="intro"> 
+            Photography is something I really enjoy doing so I thought it would be fun to look into different ways to display pictures in HTML. 
+            After looking up various formats, I decided to explore how to create a slideshow of pictures using HTML, Javascript and CSS. 
+            I based my implementation off of a w3schools article, which can be found <a href="https://www.w3schools.com/howto/howto_js_slideshow.asp" target="_blank"> here</a>. 
+            Through this experience I learned how to format images of different sizes in the same amount of space without distorting them, 
+            how to write a javascript function to loop through and display different div elements and how to create working buttons without using the button tag. 
+        </p>
 
-            <div class="slideshow">
-                <div class="my-slides"> 
-                    
-                    <div id="slide-number"> </div>
+<div class="slideshow-container">
 
-                    <img src="https://live.staticflickr.com/65535/47981085903_6746bd8fbd_k.jpg" alt="IMG_0828"></a>
+<div class="mySlides fade">
+    <img src="https://live.staticflickr.com/65535/47981085903_6746bd8fbd_k.jpg" alt="IMG_0828"></a>
+  <div class="text"> Edinburgh, Scotland </div>
+</div>
 
-                    <img src="https://live.staticflickr.com/65535/47985286916_6fe9bb20e6_k.jpg"  alt="IMG_5518"></a>
+<div class="mySlides fade">
+  <img src="https://live.staticflickr.com/4855/46487740565_115af0a5dc_b.jpg" alt="IMG_3027.CR2"></a>
+  <div class="text"> Geneva, Switzerland </div>
+</div>
 
-                    <img src="https://live.staticflickr.com/65535/47981106183_d11610f427_k.jpg"  alt="IMG_0656"></a>
+<div class="mySlides fade">
+  <img src="https://live.staticflickr.com/7804/46503439444_208a07e170_b.jpg"  alt="IMG_2243_CR2"></a>
+  <div class="text">Edinburgh, Scotland </div>
+</div>
 
-                    <img src="https://live.staticflickr.com/65535/47980988207_5ce7298ddc_k.jpg" alt="IMG_5144"></a>
+<div class="mySlides fade">
+    <img src="https://live.staticflickr.com/65535/47981149236_b013fff32f_b.jpg" alt="IMG_0745"></a>
+    <div class="text">Glencoe, Scotland</div>
+  </div>
 
-                    <img src="https://live.staticflickr.com/65535/47981056348_a244111903_k.jpg" alt="IMG_4759"></a>
+  <div class="mySlides fade">
+    <img src="https://live.staticflickr.com/65535/47981097311_8bacfdd954_b.jpg" alt="IMG_5679"></a>
+    <div class="text">Glencoe, Scotland</div>
+  </div>
 
-                    <img src="https://live.staticflickr.com/65535/47985446073_83b4c7b9bd_k.jpg" alt="IMG_0820"></a>
+  <div class="mySlides fade">
+    <img src="https://live.staticflickr.com/65535/47981102503_1ca22e0dbf_b.jpg" alt="IMG_0690"></a>
+    <div class="text">Isle of Skye, Scotland</div>
+  </div>
 
-                    <img src="https://live.staticflickr.com/65535/47981029956_a3fd62bedb_k.jpg"  alt="IMG_5433"></a>
-
-                    <img src="https://live.staticflickr.com/65535/47981149236_5f799607c2_k.jpg" alt="IMG_0745"></a>
-
-                    <img src="https://live.staticflickr.com/65535/47981106201_d6f90e6a15_k.jpg"  alt="IMG_4788"></a>
-
-                    <img src="https://live.staticflickr.com/65535/47981102503_6345629797_k.jpg" alt="IMG_0690"></a>
-
-                    <img src="https://live.staticflickr.com/7804/46503439444_4c4be1d5c5_k.jpg" alt="IMG_2243_CR2"></a>
-
-                    <img src="https://live.staticflickr.com/4855/46487740565_65acef9128_k.jpg" alt="IMG_3027.CR2"></a>
-
-                    <img src="https://live.staticflickr.com/65535/47981097311_b5ba5c9a92_k.jpg" alt="IMG_5679"></a>
-                </div>
-            </div>
+  <div class="mySlides fade">
+    <img src="https://live.staticflickr.com/65535/47981056348_fe406b465d_b.jpg"  alt="IMG_4759"></a>
+    <div class="text">Gozo, Malta</div>
+  </div>
 
 
+  <div class="mySlides fade">
+    <img src="https://live.staticflickr.com/65535/47985446073_0409f38670_b.jpg"  alt="IMG_0820"></a>
+    <div class="text">Edinburgh, Scotland</div>
+  </div>
 
-        </main>
-        <footer> </footer>
-    </body>
-</html>
+
+  <div class="mySlides fade">
+    <img src="https://live.staticflickr.com/65535/47980988207_56682e3e19_b.jpg" alt="IMG_5144"></a>
+    <div class="text"> Lisbon, Portugal</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="https://live.staticflickr.com/65535/47981106183_c8d2d9c803_b.jpg"  alt="IMG_0656"></a>
+    <div class="text"> Gozo, Malta</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="https://live.staticflickr.com/65535/47985286916_1ee51b5aeb_b.jpg" alt="IMG_5518"></a>
+    <div class="text">Kinlochleven, Scotland</div>
+  </div>
+
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+  <p> One thing I had not seen before is the onclick function </p>
+  <pre> <a class="prev" onclick="plusSlides(-1)">&#10094;</a> </pre>
+
+</main>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 
