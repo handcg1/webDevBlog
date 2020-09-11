@@ -17,6 +17,7 @@
             After looking up various formats, I decided to explore how to create a slideshow of pictures using HTML, Javascript and CSS. 
             I based my implementation off of a w3schools article, which can be found <a href="https://www.w3schools.com/howto/howto_js_slideshow.asp" target="_blank"> here</a>. 
             From this tutorial I not only learned how to create a slideshow of pictures but I also learned how to write a javascript function to loop through and display different div elements and how to create working buttons without using the button tag. 
+            Below is my example of a working slideshow with photos I took from my time studying abroad in Scotland.
         </p>
 
 <div class="slideshow-container">
@@ -179,12 +180,6 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-/*
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-*/
-
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -194,9 +189,7 @@ function showSlides(n) {
       slides[i].style.display = "none";  
   }
   
-  slides[slideIndex-1].style.display = "block";  
-  //dots[slideIndex-1].className += " active";
-  
+  slides[slideIndex-1].style.display = "block";    
 }
 </script>
 
