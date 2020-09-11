@@ -7,74 +7,73 @@
 <body>
 
     <header> 
-       <h1>  Making a slide show in HTML </h1>
+       <h1>  Making A Slideshow In HTML </h1>
     </header>
 
     <main> 
 
-        <p id="intro"> 
+        <p> 
             Photography is something I really enjoy doing so I thought it would be fun to look into different ways to display pictures in HTML. 
             After looking up various formats, I decided to explore how to create a slideshow of pictures using HTML, Javascript and CSS. 
             I based my implementation off of a w3schools article, which can be found <a href="https://www.w3schools.com/howto/howto_js_slideshow.asp" target="_blank"> here</a>. 
-            Through this experience I learned how to format images of different sizes in the same amount of space without distorting them, 
-            how to write a javascript function to loop through and display different div elements and how to create working buttons without using the button tag. 
+            From this tutorial I not only learned how to create a slideshow of pictures but I also learned how to write a javascript function to loop through and display different div elements and how to create working buttons without using the button tag. 
         </p>
 
 <div class="slideshow-container">
 
-<div class="mySlides fade">
+<div class="mySlides">
     <img src="https://live.staticflickr.com/65535/47981085903_6746bd8fbd_k.jpg" alt="IMG_0828"></a>
   <div class="text"> Edinburgh, Scotland </div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
   <img src="https://live.staticflickr.com/4855/46487740565_115af0a5dc_b.jpg" alt="IMG_3027.CR2"></a>
   <div class="text"> Geneva, Switzerland </div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
   <img src="https://live.staticflickr.com/7804/46503439444_208a07e170_b.jpg"  alt="IMG_2243_CR2"></a>
   <div class="text">Edinburgh, Scotland </div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides">
     <img src="https://live.staticflickr.com/65535/47981149236_b013fff32f_b.jpg" alt="IMG_0745"></a>
     <div class="text">Glencoe, Scotland</div>
   </div>
 
-  <div class="mySlides fade">
+  <div class="mySlides">
     <img src="https://live.staticflickr.com/65535/47981097311_8bacfdd954_b.jpg" alt="IMG_5679"></a>
     <div class="text">Glencoe, Scotland</div>
   </div>
 
-  <div class="mySlides fade">
+  <div class="mySlides">
     <img src="https://live.staticflickr.com/65535/47981102503_1ca22e0dbf_b.jpg" alt="IMG_0690"></a>
     <div class="text">Isle of Skye, Scotland</div>
   </div>
 
-  <div class="mySlides fade">
+  <div class="mySlides">
     <img src="https://live.staticflickr.com/65535/47981056348_fe406b465d_b.jpg"  alt="IMG_4759"></a>
     <div class="text">Gozo, Malta</div>
   </div>
 
 
-  <div class="mySlides fade">
+  <div class="mySlides">
     <img src="https://live.staticflickr.com/65535/47985446073_0409f38670_b.jpg"  alt="IMG_0820"></a>
     <div class="text">Edinburgh, Scotland</div>
   </div>
 
 
-  <div class="mySlides fade">
+  <div class="mySlides">
     <img src="https://live.staticflickr.com/65535/47980988207_56682e3e19_b.jpg" alt="IMG_5144"></a>
     <div class="text"> Lisbon, Portugal</div>
   </div>
 
-  <div class="mySlides fade">
+  <div class="mySlides">
     <img src="https://live.staticflickr.com/65535/47981106183_c8d2d9c803_b.jpg"  alt="IMG_0656"></a>
     <div class="text"> Gozo, Malta</div>
   </div>
 
-  <div class="mySlides fade">
+  <div class="mySlides">
     <img src="https://live.staticflickr.com/65535/47985286916_1ee51b5aeb_b.jpg" alt="IMG_5518"></a>
     <div class="text">Kinlochleven, Scotland</div>
   </div>
@@ -84,21 +83,17 @@
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 <br>
-
-  <p> One thing I had not seen before is the onclick function </p>
-  <pre> </pre>
-
-</main>
-
 <br>
 
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
 
-<script>
+
+<p> 
+Below is the javascript code contained within the script tag. This code makes it possible for only one photo to be displayed at a time and for the arrow buttons to successfully switch to the next photo. 
+</p>
+
+<pre> 
+&lt;script&gt;
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -113,19 +108,103 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
+
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
   slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+}
+&lt;/script&gt;
+
+</pre>
+
+
+<p> 
+The showSlides function accesses all the div elements that are in the mySlides class which contains all the elements that have an image. The function then loops through all those div elements and sets their display to none so they are not visible. 
+Finally, it sets the photo at index n to be visible by setting the display to block. I thought that toggling the display property for each div element was a really nice way to make a single image visable. This approach is much easier to understand and implement as opossed to trying to replace or create a new image every time. 
+<br>
+<br>
+The previous and next arrow elements have onclick attributes which call the plusSlides function as seen below. 
+</p>
+<pre> 
+&lt;a class="prev" onclick="plusSlides(-1)"> &#10094; &lt;/a&gt;
+
+</pre>
+
+<p> 
+I've never used the onclick attribute before so this was a nice opportunity to see how it works. 
+Adding onclick to an element is a very easy and simple way to add functionality. In the case of the slideshow the onclick attribute allowed the arrow symbols to become buttons that once clicked call the plusSlides function.
+</p> 
+<pre> 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+</pre>
+
+<p> 
+The plusSlides function adds one to the slideIndex and calls the showSlides function to display the image. Something I found really cool was the ability to use the same plusSlides function for both the previous and next button. To pass a 1 or -1 to the function was a really simple and smart way to reuse code and keep things clean. 
+<br>
+<br> 
+
+The one major challenge I ran into when implementing the picture slideshow was the formatting of the previous and next arrow buttons. I found that if I added images with different dimensions then the arrows would end up moving to fit the different sized images. In order to fix this I added a height and object-fit property to the images. 
+</p>
+
+<pre>
+  img {
+    vertical-align: middle;
+    width: 100%;
+    object-fit: contain;
+    height: 70vh;
+}
+</pre>
+
+<p> 
+  Overall, I really enjoyed learning how to create this slideshow. I think that this could have a lot of pratical and creative uses in a webpage. It can also be expaned upon to include things such as numbers to show how many pictures there are or thumbnails with the other images. 
+</p>
+
+
+
+</main>
+
+<br>
+
+<script>
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+/*
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+*/
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}  
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  
+  slides[slideIndex-1].style.display = "block";  
+  //dots[slideIndex-1].className += " active";
+  
 }
 </script>
+
+<footer>
+
+  <a href="index.html"> Table of Contents</a>
+
+</footer>
 
 </body>
 </html> 

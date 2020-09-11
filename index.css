@@ -1,5 +1,5 @@
 #table-of-contents{
-    background-color: lightblue;
+    background-color: rgba(127,128,158, 0.6);
     max-width: 760px;
     min-height: 70vh;
     margin: 0 auto;
@@ -8,4 +8,8 @@
 
 header > h1 {
     text-align: center;
+}
+
+li {
+    font-size: 1.2em;
 }
