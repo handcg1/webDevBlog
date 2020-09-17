@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="post2.css">
+    </head>
+    <body>
+        <header>  <h1> Image Mapping </h1> </header>
+
+        <main> 
+
+        <div id="root"> 
+        <div id="base"> 
+            <img id="base-image" src="https://live.staticflickr.com/65535/50346331603_93ab984b1a_b.jpg" alt="German shepherd sittng on bed" usemap="#map">
+        </div>
+
+            <div id="ear"> 
+                <img id="ear-image" src="https://live.staticflickr.com/65535/50352526718_2b9b02b2f8_b.jpg" alt="Isabell head out window">
+                <p> Isabell loves to stick her head out the window on car rides. </p>
+                <button onclick="back('ear')"> Back </button> 
+            
+            </div>
+
+            <div id="nose"> 
+                <img id="nose-image"src="https://live.staticflickr.com/65535/50347003831_2ce31f9374_b.jpg" alt="Dog sleeping on bed">
+                <p> Isabell spends most of her day sleeping on my bed. </p>
+                <button onclick="back('nose')"> Back </button> 
+            
+            </div>
+
+        </div>
+
+            <p> 
+                This week I decided to look into image mapping. 
+                Image mapping allows a user to click on different parts of an image to see more information or be redirected. 
+                To learn about image mapping, I followed a tutorial from w3schools which can be found <a href="https://www.w3schools.com/html/html_images_imagemap.asp" target="_blank"> here</a>. 
+                I found image mapping to be a fun way to interact with pictures beyond just looking at them. 
+                I think this feature can be really useful in a lot of different ways. 
+                For example, it could be used for a museum website where users can click on different parts of an image to get more information about the image or zoom in. 
+                Image mapping could also be used for a website that sells clothes. Users could click on an article of clothing they liked and then be redirected to a page where they could purchase that piece of clothing. 
+                In my implementation I have a picture of Isabell, the dog I am fostering. 
+                You can click on her left ear, and nose to learn more about her. 
+            </p>
+   
+        <map name="map">
+            <area id="left-ear" shape="circle" coords="128,130,40" alt="Dog head"  onclick="show('ear')">
+            <area id="nose" shape="square" coords="160,210,200,260" alt="Dog head"  onclick="show('nose')">
+        </map>
+
+        <p> Image mapping works by creating a base image and then linking it to the map by using the usemap attribute as seen below. </p>
+
+        <pre> 
+            &lt;img id="mapped" src="https://live.staticflickr.com/65535/50346331603_93ab984b1a_b.jpg" alt="German shepherd sittng on bed" usemap="#map">
+        </pre>
+
+        <p> The map is created by using the map tag with different areas inside of it as seen below. </p>
+
+        <pre> 
+            &lt;map name="map">
+            &lt;area id="left-ear" shape="circle" coords="128,130,40" alt="Dog head"  onclick="show('ear')">
+            &lt;/map>
+        </pre>
+
+        <p> These areas can have different shapes such as circle or square and the coords attribute will change based on the specific shape. 
+            One difficulty I had with image mapping was that the base image could not be resized to fit the browser because then the image map would be off. 
+            Another challenge I faced was that it was hard to figure out the coordinates to put the areas in the right positions. 
+            I ended up having to do a lot of guessing and checking.
+            Additionally, I also wish it was easier to create a hover effect on the areas so the user could tell where the area is and where they can click. 
+            I looked into this issue and found a <a href="https://stackoverflow.com/questions/26634273/adding-hover-effects-for-links-in-image-map-area">stack overflow article</a> that said the html area element does not accept hovering. I tried to implement their solution which involved Jquery but I ran into trouble getting it to work. 
+        </p>
+
+        
+
+          <script>
+              function show(id) {
+                  var element; 
+                    element = document.getElementById(id);
+                    element.style.display = "block"; 
+                    document.getElementById('base-image').style.display = "none";
+              }
+
+              function back(id) {
+                document.getElementById('base-image').style.display = "block";
+                document.getElementById(id).style.display = "none";
+              }
+          </script>
+    </main>
+
+    <footer></footer>
+    </body>
+</html>

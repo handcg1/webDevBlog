@@ -1,0 +1,50 @@
+#base-image {
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+}
+
+
+#root {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+}
+
+#nose-image {
+    height: 400px;
+}
+
+#ear-image {
+    height: 400px;
+    width: 400px;
+    object-fit: contain;
+    margin: 10px;
+}
+
+body {
+    font-family: Verdana, sans-serif; 
+    margin:0; 
+    background-color: #e1e1e1;
+  }
+
+h1 {
+    text-align: center;
+}
+
+
+p {
+    text-align: center;
+    width: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 20px;
+    background-color: rgba(153,183,199,0.5);
+    border-radius: 10px;
+  }
+
+
+#ear, #nose{
+    display: none;
+}
