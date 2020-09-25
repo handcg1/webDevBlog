@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Post 3</title>
+    <link rel="stylesheet" href="post3.css">
+</head>
+<body>
+
+  
+    <main> 
+    <section> 
+
+        <div id="text"> 
+        <h1> Animating Leaves </h1>
+        <p> Since the first day of fall was on Tuesday, I decided to implement a falling leaves animation. 
+            I followed a Youtube turotial which can be found <a href="https://www.youtube.com/watch?v=fD_AuhsheuU&list=PL5e68lK9hEzcZLltZrc3NDlKWS3XygchY&index=9"> here</a>. 
+             Overall I think creating animations like this is really fun and can help to liven up any website. 
+            The animation for the leaves was done entirely with CSS. 
+            The tutorial used absolute positioning which worked out really well beacuse we had just learned about it in class and it was nice to see another example of how to use it.
+            Absolute positioning is used to place the leaves in different parts of the screen. 
+            For example, here is the CSS for a leaf div. 
+        </p>
+
+        <pre> 
+            .set div:nth-child(1){
+                left: 20%; 
+                animation: animate 15s linear forwards;
+                animation-delay: -7s;
+            }
+        </pre>
+
+        <p> The leaf's parent div has absolute positioning so this leaf's left margin will be offset by 20%. 
+            I hadn't used the animation property before. I learned that it can take in variuos different values. 
+        For the leaves the animation is named animate, it will complete in 15 seconds, move in a linear direction and will retain the style values set by the last keyframe.
+        I changed the animation-fill-mode property to be forwards as a way to have the animation only play once. The second part of an animation that I learned about is the keyframes. 
+        The keyframes used for the leaves is seen below. 
+    </p>
+
+    <pre> 
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                top: -10%;
+                transform: translateX(20px) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            20% {
+                transform: translateX(-20px) rotate(45deg);
+            }
+            40% {
+                transform: translateX(-20px) rotate(90deg);
+            }
+            60% {
+                transform: translateX(20px) rotate(135deg);
+            }
+            80% {
+                transform: translateX(20px) rotate(180deg);
+            }
+            100% {
+                top: 110%;
+                transform: translateX(20px) rotate(225deg);
+            }
+        }
+    </pre>
+
+    <p>
+        I learned that keyframes allows the animation to change at specific times. 
+        This animation will change based on what percent of the animation has been completed. 
+        This allowed for the leaf movements to look more real as not only are they moving across the screen but they are also rotating and moving along the x-axis. 
+        Another CSS property I learned about was filter which allowed for the leaves to be blurred and create a sense of depth.
+
+    </p>
+        </div>
+        
+        <div class="set"> 
+            <div> <img src="/Users/callanhand/Desktop/blog/red2Leaf-rb.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/redLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/greenLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/yellowLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/red2Leaf-rb.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/redLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/greenLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/yellowLeaf.png"> </div>
+        </div>
+
+        <div class="set set2"> 
+            <div> <img src="/Users/callanhand/Desktop/blog/red2Leaf-rb.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/redLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/greenLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/yellowLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/red2Leaf-rb.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/redLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/greenLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/yellowLeaf.png"> </div>
+
+        </div>
+
+        <div class="set set3"> 
+            <div> <img src="/Users/callanhand/Desktop/blog/red2Leaf-rb.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/redLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/greenLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/yellowLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/red2Leaf-rb.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/redLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/greenLeaf.png"> </div>
+            <div> <img src="/Users/callanhand/Desktop/blog/yellowLeaf.png"> </div>
+
+        </div>
+    </section>
+</main>
+
+<footer> </footer>
+</body>
+</html>
