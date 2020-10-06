@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="post5.css">
+    </head>
+    <body>
+
+        <header> 
+            <h1> Scrolling Animation </h1>
+        </header>
+
+        <main> 
+
+             
+            <section> 
+            <span class="sliding"> 
+                <span> CALLAN </span> 
+                <span> HAND </span>
+                <span> - </span>
+                <span> CALLAN </span> 
+                <span> HAND </span>
+            </span>
+            <div class="wrapper"> 
+                <span class="sliding"> 
+                    <span> CALLAN </span> 
+                    <span> HAND </span>
+                    <span> - </span>
+                    <span> CALLAN </span> 
+                    <span> HAND </span>
+                </span>
+            </div>
+
+            </section>
+
+            <div id="text"> 
+            <p> 
+                This week I created a scrolling animation based off a tutorial by Online Tutorial Youtube channel which can be found <a href="https://www.youtube.com/watch?v=_cWKesvhFlg" target="_blank">here</a>. 
+                I think this animation could be a really cool way to display a title of a website. It could also be a really fun effect to apply to an image. 
+                From this tutorial I learned the difference between section and div, the css property white-space and how to create an animation that translates x and y values at the same time. 
+            </p>
+            <p> 
+                I have followed tutorials from this Youtube channel before and I have noticed that they use the section tag a lot instead of the div tag. 
+                I was curious as to why this way so I did a quick google search and found <a href="https://www.w3docs.com/snippets/html/what-is-the-difference-between-section-and-div-elements.html" target="_blank">this article</a>. 
+                I learned that the section tag is used when you want to group items together where as the div tag is simply a container that gains meaning from adding attributes to it. 
+            </p> 
+
+            <p> 
+                The white-space property was used with the nowrap value as seen below for the sliding class which has children that are span elements with the text inside of them.  
+            </p>
+
+            <pre> 
+                .sliding {
+                    position: absolute;
+                    top: 50%;
+                    white-space: nowrap;
+                    font-size: 12em;
+                    line-height: 220px;
+                    overflow: hidden;
+                    font-family: "arial black";
+                    animation: animate 20s linear infinite;
+                }
+            </pre>
+
+            <p> 
+                Here the white-space property was used to keep the text all in one line as the nowrap value makes sure that the text will not wrap to the next line. 
+            </p>
+
+            <p>
+                To create the sliding text effect the tutorial used an animation with keyframes in CSS. 
+                Both the 0% and 100% values are used to signify what will happen at the beginning and end of the animation. 
+                The keyframes used are below. 
+            </p>
+
+            <pre>
+                @keyframes animate {
+                    0% {
+                        transform: translate(0, -50%);
+                    }
+                
+                    100% {
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            </pre>
+
+            <p>
+                The first transform is used to center the text along the y-axis inside of the colored backgrounds. 
+            </p>
+
+            <p>
+                The next transform moves the text across the x-axis to the left because it is a negative value and at the end of the animation the text will have moved 50% to the left which creates the scrolling effect. 
+                This also creates the illusion that the text will keep scrolling forever as the animation restarts before the end of the text. 
+                Although this effect is created, it is a little choppy when the animation restarts. I think this is something that could be approved upon by messing with the percetage that the text moves on the x-axis. 
+            
+                The y-axis transformation does not change so the text will always be centered vertically. 
+        </p>
+            </div>
+
+
+       
+
+        </main>
+
+    </body>
+</html>
