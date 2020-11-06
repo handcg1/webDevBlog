@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="post7.css">
+        <script defer src="post7.js"></script>
+    </head>
+    <body>
+        <h1> Simulating a Dice Roll</h1>
+
+        <div class="container"> 
+    
+            <div class="dice"> 
+              
+                <img class="img1" src="dice1.png"> 
+            </div> 
+      
+        <div class="container bottom"> 
+            <button type="button" class="btn"
+                onClick="rollTheDice()"> 
+                Roll the Dice 
+            </button> 
+        </div> 
+        </div>
+
+       <p>
+        This week I decided to implement a feature that allows you to roll a dice. If you are creating any sort of internet game with a dice component this would be really helpful. I followed a tutorial from GreeksforGreeks which can be found <a href="https://www.geeksforgeeks.org/building-a-dice-game-using-javascript/" target="_blank">here</a>. I only implemented the dice rolling component from this tutorial as that was all I was trying to learn how to implement. Some major takeaways I had are the setTimeout method and Math.random() in Javascript. 
+       </p>
+
+       <p> The javascript used to create the dice roll is below. </p>
+
+       <pre> function rollTheDice() { 
+        setTimeout(function () { 
+            var randomNumber1 = Math.floor(Math.random() * 6) + 1; 
+            var randomNumber2 = Math.floor(Math.random() * 6) + 1; 
+    
+            document.querySelector(".img1").setAttribute("src", 
+                "dice" + randomNumber1 + ".png"); 
+    
+            document.querySelector(".img2").setAttribute("src", 
+                "dice" + randomNumber2 + ".png"); 
+    
+        }, 1000); 
+    } 
+    </pre>
+
+    <p> 
+        This javascript is invoked by using the onClick attribute on the ‘roll the dice’ button. I had never used the setTimeout method before so I looked it up and found a really helpful article which can be found <a href="https://www.w3schools.com/jsref/met_win_settimeout.asp" target="_blank">here</a>. I learned that setTimeout calls a function or evaluates an expression after the specific time given in milliseconds. For the dice roll, the setTimeout calls a function that randomly sets an image of the dice face. The setTimeout allows you to simulate the action of actually rolling the dice. This method could be used for a lot of different purposes and it is good to know that javascript has such a method. 
+    </p>
+
+    <p> The Math.random() function is also very useful. Most programming languages have a similar function. In javascript you can used Math.random() to return a value with a specific max and min by multiplying it by the max and then adding the min as done below in the dice example. </p>
+    
+    <pre> var randomNumber1 = Math.floor(Math.random() * 6) + 1; 
+    </pre>
+
+</body>
+</html>
